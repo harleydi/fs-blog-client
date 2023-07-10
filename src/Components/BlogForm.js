@@ -9,16 +9,18 @@ const BlogForm = () => {
   const [author, setAuthor] = useState("")
 
   const navigate = useNavigate()
-  const { handleNewBlog } = useOutletContext()
+  const { handleNewBlog, setShouldRefresh } = useOutletContext()
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
+    setShouldRefresh(true)
     const newBlog = {
         title,
         content,
         author
     }
     handleNewBlog(newBlog)
+    navigate("/")
   }
 
   return (
