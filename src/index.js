@@ -5,6 +5,8 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Blogs from './Pages/Blogs';
 import BlogForm from './Components/BlogForm';
+import EditForm from './Components/EditForm';
+import Favorites from './Pages/Favorites';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: 'blog-form',
         element: <BlogForm />
+      },
+      {
+        path: 'edit/:id',
+        element: <EditForm />
+      },
+      {
+        path: '/favorites',
+        element: <Favorites />
       }
     ]
   },
